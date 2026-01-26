@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Athletics | Performance Sports Apparel</title>
+    <style>
+        /* General Styles */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        /* Header & Navigation */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: #111; color: white; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #ff3e3e; }
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        .auth-buttons button { cursor: pointer; padding: 8px 16px; border: none; border-radius: 4px; font-weight: bold; }
+        #login-btn { background: #ff3e3e; color: white; }
+        #logout-btn { background: #444; color: white; display: none; }
+
+        /* Hero Banner */
+        .banner { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com'); 
+                  height: 60vh; background-size: cover; background-position: center; display: flex; flex-direction: column; 
+                  justify-content: center; align-items: center; color: white; text-align: center; }
+        .banner h1 { font-size: 3rem; margin-bottom: 10px; }
+        .cta-button { background: #ff3e3e; padding: 12px 30px; border-radius: 5px; font-size: 1.2rem; margin-top: 20px; }
+
+        /* Product Tile Cards */
+        .product-section { padding: 50px 5%; background: #f4f4f4; }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card-img { height: 250px; background: #ddd; background-size: cover; background-position: center; }
+        .card-info { padding: 15px; }
+        .card-info h3 { margin: 0; font-size: 1.2rem; }
+        .price { color: #ff3e3e; font-weight: bold; font-size: 1.1rem; }
+
+        /* Footer */
+        footer { background: #111; color: #888; padding: 40px 5%; text-align: center; border-top: 3px solid #ff3e3e; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { margin: 0 10px; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header with Navigation -->
+    <header>
+        <div class="logo">APEX ATHLETICS</div>
+        <nav>
+            <ul>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Equipment</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button id="login-btn" onclick="handleAuth(true)">Login</button>
+            <button id="logout-btn" onclick="handleAuth(false)">Logout</button>
+        </div>
+    </header>
+
+    <!-- 2. Hero Banner -->
+    <section class="banner">
+        <h1>UNLEASH YOUR LIMITS</h1>
+        <p>Premium performance gear for the elite athlete.</p>
+        <a href="#" class="cta-button">Shop New Arrivals</a>
+    </section>
+
+    <!-- 3. Tile Cards -->
+    <section class="product-section">
+        <h2 class="section-title">Featured Gear</h2>
+        <div class="grid-container">
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com');"></div>
+                <div class="card-info">
+                    <h3>Velocity Runners</h3>
+                    <p>Lightweight foam tech.</p>
+                    <span class="price">$120.00</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com');"></div>
+                <div class="card-info">
+                    <h3>Apex Compression Tee</h3>
+                    <p>Moisture-wicking fabric.</p>
+                    <span class="price">$45.00</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com');"></div>
+                <div class="card-info">
+                    <h3>Pro Gym Bag 2.0</h3>
+                    <p>Weather-resistant storage.</p>
+                    <span class="price">$65.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <p>&copy; 2026 Apex Athletics Inc. All rights reserved.</p>
+    </footer>
+
+    <!-- Simple Login Toggle Script -->
+    <script>
+        function handleAuth(isLogin) {
+            const loginBtn = document.getElementById('login-btn');
+            const logoutBtn = document.getElementById('logout-btn');
+            
+            if(isLogin) {
+                alert("Welcome back, Athlete!");
+                loginBtn.style.display = 'none';
+                logoutBtn.style.display = 'block';
+            } else {
+                alert("Logged out successfully.");
+                loginBtn.style.display = 'block';
+                logoutBtn.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
