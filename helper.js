@@ -53,7 +53,7 @@ function displayRandomOfferModal(jsonString) {
         // 3. Build HTML for the SINGLE random offer
         modal.innerHTML = `
             <div style="text-align: center; font-family: 'Helvetica Neue', Arial, sans-serif;">
-                <span style="background: #006fcf; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: bold; text-transform: uppercase;">
+                <span style="background: #ff3e3e; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: bold; text-transform: uppercase;">
                     ${offer.offerCategory} Exclusive
                 </span>
                 
@@ -61,7 +61,7 @@ function displayRandomOfferModal(jsonString) {
                 
                 <a href="${offer.offerCTAActionURL}" 
                    target="${offer.offerCTAActionTarget}" 
-                   style="display: block; background: #006fcf; color: white; padding: 12px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-bottom: 10px;">
+                   style="display: block; background: #ff3e3e; color: white; padding: 12px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-bottom: 10px;">
                    ${offer.offerName}
                 </a>
                 
