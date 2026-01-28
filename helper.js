@@ -1,3 +1,8 @@
+window.addEventListener("load", function() {
+  // Your code here will run after the entire page and all its resources have loaded
+  console.log("Window fully loaded. Running function.");
+  if (typeof alloy === "function") {
+
 alloy("sendEvent", {
   "personalization": {
     "surfaces": ["web://devteammember.github.io/index.html#dynamic-multiple-offer-bhp-modal"] 
@@ -26,7 +31,8 @@ alloy("sendEvent", {
 }).catch(error => {
   console.error("Error fetching offers:", error);
 });
-
+}
+});
 
 function displayRandomOfferModal(jsonString) {
     try {
