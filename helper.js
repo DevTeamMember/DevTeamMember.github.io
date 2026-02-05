@@ -22,7 +22,10 @@ function renderSpecificOffer(id, name, type, mScore) {
 
         const uuid = crypto.randomUUID();
 
-        
+        const actionId = id;
+        const actionName = name;
+        const actionType = type;
+        const modelValue = mScore;
 
 
         alloy('getIdentity').then(result => {
@@ -39,9 +42,9 @@ function renderSpecificOffer(id, name, type, mScore) {
                 xdm: {
                     "_accenture_partner": {
                         "interactionDetails": {
-                            "actionId": id,
-                            "actionName": name,
-                            "actionType": type,
+                            "actionId": actionId,
+                            "actionName": actionName,
+                            "actionType": actionType,
                             "actionURL": windowURL
                         },
                         "offerContextData": {
@@ -58,7 +61,7 @@ function renderSpecificOffer(id, name, type, mScore) {
                             "modelDetails": [
                                 {
                                     "modelId": "150",
-                                    "modelScore": mScore
+                                    "modelScore": modelValue
                                 }
                             ],
                             "weatherDetails": {
@@ -70,7 +73,7 @@ function renderSpecificOffer(id, name, type, mScore) {
                             "customerProfileId": "e5413fd6c876b4439650dda80c6d6e4e26a7736dfbacde63c16c07b943b0ec86",
                             "loyaltyType": "diamond",
                             "trackId": "150",
-                            "trackScore": mScore,
+                            "trackScore": modelValue,
                             "userEmailAddress": "shashi.chennachar@accenture.com"
                         },
                         "webPageDetails": {
