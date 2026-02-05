@@ -1,11 +1,13 @@
-function renderSpecificOffer() {
-    async function getLocation() {
+function renderSpecificOffer(id, name, type) {
+
+   
+    async function getLocation(id, name, type) {
         const response = await fetch('https://api.bigdatacloud.net/data/reverse-geocode-client');
         const data = await response.json();
 
         const city = data.locality;
         const state = data.principalSubdivisionCode.split("-")[1];
-        renderOffers(city, state);
+        renderOffers(city, state, id, name, type);
         console.log(`You are in ${city}, ${state}`);
     }
 
@@ -13,7 +15,7 @@ function renderSpecificOffer() {
 
 
 
-    function renderOffers(city, state) {
+    function renderOffers(city, state, id, name, type) {
         const userCity = 'Novi';
         const userState = 'MI';
         const timestamp = new Date().toISOString();
@@ -26,7 +28,7 @@ function renderSpecificOffer() {
         alloy('getIdentity').then(result => {
             const requestECID = result.identity.ECID;
 
-
+             const windowURL = window.location.href.replaceAll('#', '');
             const payload = {
                 renderDecisions: true,
                 personalization: {
@@ -36,10 +38,10 @@ function renderSpecificOffer() {
 
                     "_accenture_partner": {
                         "interactionDetails": {
-                            "actionId": "aa-landingpage-load",
-                            "actionName": "AA Landing Page Load",
-                            "actionType": "page-load",
-                            "actionURL": "https://devteammember.github.io/index.html"
+                            "actionId": id,
+                            "actionName": name,
+                            "actionType": type,
+                            "actionURL": windowURL
                         },
                         "offerContextData": {
                             "deviceDetails": {
