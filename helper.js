@@ -7,7 +7,7 @@ function renderSpecificOffer(id, name, type, mScore) {
 
         const city = data.locality;
         const state = data.principalSubdivisionCode.split("-")[1];
-        renderOffers(city, state, id, name, type);
+        renderOffers(city, state, id, name, type, mScore);
         console.log(`You are in ${city}, ${state}`);
     }
 
