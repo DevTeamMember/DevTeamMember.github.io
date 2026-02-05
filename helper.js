@@ -22,20 +22,21 @@ function renderSpecificOffer(id, name, type, mScore) {
 
         const uuid = crypto.randomUUID();
 
-
+        
 
 
         alloy('getIdentity').then(result => {
             const requestECID = result.identity.ECID;
 
-             const windowURL = window.location.href.replaceAll('#', '');
+            const windowURL = window.location.href.replaceAll('#', '');
+
+           
             const payload = {
                 renderDecisions: true,
                 personalization: {
                     surfaces: ["web://devteammember.github.io/index.html#dynamic-aa-landing-page-offers"]
                 },
                 xdm: {
-
                     "_accenture_partner": {
                         "interactionDetails": {
                             "actionId": id,
@@ -106,7 +107,7 @@ function renderSpecificOffer(id, name, type, mScore) {
                 }
             };            
             if (typeof alloy === "function") {
-
+                console.log("Request Payload -->" , payload);
                 alloy("sendEvent", payload).then(result => {
                     // Check if any propositions (offers) were returned
                     if (result.propositions && result.propositions.length > 0) {
