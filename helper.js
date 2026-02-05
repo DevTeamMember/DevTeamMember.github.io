@@ -1,5 +1,7 @@
 function renderSpecificOffer(id, name, type, mScore) {
 
+   debugger;
+   console.log("Click Data", id);
    
     async function getLocation(id, name, type, mScore) {
         const response = await fetch('https://api.bigdatacloud.net/data/reverse-geocode-client');
