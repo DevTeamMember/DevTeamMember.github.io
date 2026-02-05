@@ -13,7 +13,7 @@ function renderSpecificOffer(id, name, type, mScore) {
         console.log(`You are in ${city}, ${state}`);
     }
 
-    getLocation();
+    getLocation(id, name, type, mScore);
 
 
 
