@@ -1,7 +1,7 @@
-function renderSpecificOffer(id, name, type) {
+function renderSpecificOffer(id, name, type, mScore) {
 
    
-    async function getLocation(id, name, type) {
+    async function getLocation(id, name, type, mScore) {
         const response = await fetch('https://api.bigdatacloud.net/data/reverse-geocode-client');
         const data = await response.json();
 
@@ -15,7 +15,7 @@ function renderSpecificOffer(id, name, type) {
 
 
 
-    function renderOffers(city, state, id, name, type) {
+    function renderOffers(city, state, id, name, type, mScore) {
         const userCity = 'Novi';
         const userState = 'MI';
         const timestamp = new Date().toISOString();
@@ -57,7 +57,7 @@ function renderSpecificOffer(id, name, type) {
                             "modelDetails": [
                                 {
                                     "modelId": "150",
-                                    "modelScore": 1.00
+                                    "modelScore": mScore
                                 }
                             ],
                             "weatherDetails": {
@@ -69,7 +69,7 @@ function renderSpecificOffer(id, name, type) {
                             "customerProfileId": "e5413fd6c876b4439650dda80c6d6e4e26a7736dfbacde63c16c07b943b0ec86",
                             "loyaltyType": "diamond",
                             "trackId": "150",
-                            "trackScore": 1.00,
+                            "trackScore": mScore,
                             "userEmailAddress": "shashi.chennachar@accenture.com"
                         },
                         "webPageDetails": {
