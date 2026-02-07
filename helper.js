@@ -114,6 +114,7 @@ function renderSpecificOffer(id, name, type, mScore) {
                 console.log("Request Payload -->" , payload);
                 alloy("sendEvent", payload).then(result => {
                     // Check if any propositions (offers) were returned
+                    window.ourLastProposition = result.propositions[0];
                     if (result.propositions && result.propositions.length > 0) {
                         result.propositions.forEach(proposition => {
                             console.log("Placement ID (Scope):", proposition.scope);
@@ -159,6 +160,7 @@ function displayRandomOfferModal(jsonString) {
         const modal = document.createElement('div');
 
         console.log(offer);
+        window.ourOffer = offer;
 
         // 3. Build HTML for the SINGLE random offer
         modal.innerHTML = `
